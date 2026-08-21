@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mohamad Tarek | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500&amp;family=Playfair+Display:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface": "#1a1c1a",
+                      "on-secondary-container": "#636563",
+                      "surface-bright": "#faf9f6",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "inverse-surface": "#2f312f",
+                      "tertiary-container": "#001f2a",
+                      "secondary": "#5d5f5d",
+                      "on-secondary-fixed": "#1a1c1b",
+                      "on-primary-fixed-variant": "#474747",
+                      "secondary-fixed-dim": "#c6c7c5",
+                      "surface-container-highest": "#e3e3e0",
+                      "surface-dim": "#dadad7",
+                      "on-primary-container": "#848484",
+                      "on-tertiary-fixed": "#001f2a",
+                      "surface-variant": "#e3e3e0",
+                      "inverse-primary": "#c6c6c6",
+                      "surface": "#faf9f6",
+                      "primary-container": "#1b1b1b",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed-dim": "#a9cbde",
+                      "on-secondary-fixed-variant": "#454746",
+                      "secondary-container": "#e2e3e1",
+                      "on-background": "#1a1c1a",
+                      "on-tertiary-fixed-variant": "#294b5a",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed": "#e2e3e1",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#c5e8fb",
+                      "surface-container-low": "#f4f4f1",
+                      "primary": "#000000",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "outline-variant": "#cfc4c5",
+                      "error-container": "#ffdad6",
+                      "background": "#faf9f6",
+                      "error": "#ba1a1a",
+                      "on-surface-variant": "#4c4546",
+                      "outline": "#7e7576",
+                      "primary-fixed": "#e2e2e2",
+                      "on-tertiary-container": "#67889a",
+                      "inverse-on-surface": "#f1f1ee",
+                      "surface-container-high": "#e8e8e5",
+                      "surface-tint": "#5e5e5e",
+                      "tertiary": "#000000",
+                      "surface-container": "#eeeeeb",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed": "#1b1b1b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "24px",
+                      "container-max": "1440px",
+                      "gutter": "32px",
+                      "section-gap": "160px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "DM Sans"
+                      ],
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "DM Sans"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "label-caps": [
+                              "DM Sans"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "84px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "42px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.15em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #faf9f6;
+            color: #1a1c1a;
+        }
+        
+        .hairline {
+            height: 1px;
+            background-color: #E2E2DF;
+        }
+        
+        .btn-primary {
+            border: 1px solid #000000;
+            background: transparent;
+            border-radius: 0;
+            transition: all 0.5s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #000000;
+            color: #faf9f6;
+        }
+
+        .input-line {
+            border: none;
+            border-bottom: 1px solid #000000;
+            background: transparent;
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .input-line:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom: 2px solid #000000;
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+        
+        .portfolio-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 1px solid transparent;
+            transition: border-color 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .portfolio-card:hover::after {
+            border-color: #000000;
+        }
+        
+        .nav-scrolled {
+            background-color: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(8px);
+        }
+
+        /* FIX: nav must fully disappear (not just be covered) while the
+           case study overlay is open, otherwise its text/icons can bleed
+           through on top of the close button on some browsers. */
+        #main-nav.nav-hidden-for-overlay {
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* ============================================================
+           INTRO — coded logo reveal (no image, no video)
+           ============================================================ */
+        .intro-veil {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: #faf9f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .intro-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .intro-mark {
+            width: 96px;
+            height: auto;
+            margin-bottom: 36px;
+            color: #000000;
+        }
+        .intro-word {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 32px;
+            letter-spacing: 0.5em;
+            opacity: 0;
+            color: #1a1c1a;
+        }
+        .intro-word.settle {
+            animation: intro-settle 1.1s cubic-bezier(.19,1,.22,1) forwards;
+        }
+        @keyframes intro-settle {
+            0%   { opacity: 0; letter-spacing: 0.5em; }
+            100% { opacity: 1; letter-spacing: 0.14em; }
+        }
+        .intro-rule {
+            width: 0;
+            height: 1px;
+            background: #000000;
+            margin: 22px 0;
+        }
+        .intro-rule.draw {
+            animation: intro-draw-rule 0.9s cubic-bezier(.65,0,.35,1) forwards;
+        }
+        @keyframes intro-draw-rule { to { width: 260px; } }
+        .intro-sub {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #4c4546;
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        .intro-sub.fade {
+            animation: intro-fade-up 0.9s ease forwards;
+        }
+        @keyframes intro-fade-up { to { opacity: 1; transform: translateY(0); } }
+        .intro-veil.leaving .intro-stage {
+            animation: intro-exit-stage 0.9s cubic-bezier(.65,0,.35,1) forwards;
+        }
+        @keyframes intro-exit-stage {
+            to { opacity: 0; transform: translateY(-16px) scale(0.98); }
+        }
+        .intro-veil.leaving {
+            animation: intro-exit-veil 0.9s ease forwards;
+            animation-delay: 0.5s;
+        }
+        @keyframes intro-exit-veil { to { opacity: 0; visibility: hidden; } }
+
+        @media (prefers-reduced-motion: reduce) {
+            .intro-veil { display: none; }
+        }
+
+        /* ============================================================
+           CASE STUDY OVERLAY
+           ============================================================ */
+        .case-study-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 90;
+            background: #faf9f6;
+            overflow-y: auto;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(24px);
+            transition: opacity 0.6s cubic-bezier(.19,1,.22,1),
+                        transform 0.6s cubic-bezier(.19,1,.22,1),
+                        visibility 0s linear 0.6s;
+        }
+        .case-study-overlay.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            transition: opacity 0.6s cubic-bezier(.19,1,.22,1),
+                        transform 0.6s cubic-bezier(.19,1,.22,1),
+                        visibility 0s linear 0s;
+        }
+        .case-study-inner {
+            padding-top: 140px;
+        }
+        .case-study-close {
+            position: fixed;
+            top: 32px;
+            right: 32px;
+            z-index: 91;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #faf9f6;
+            border: 1px solid #000000;
+            border-radius: 0;
+            cursor: pointer;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .case-study-close:hover {
+            background: #000000;
+            color: #faf9f6;
+        }
+        html.case-study-locked,
+        html.case-study-locked body {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        /* FIX: images now use "contain" so full artwork is always visible
+           at its natural aspect ratio instead of being cropped/stretched
+           by "cover". A neutral fill color shows in any empty space. */
+        .img-contain-fill {
+            background-color: #faf9f6;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* ============================================================
+           CASE STUDY SLIDESHOW — crossfade between multiple images
+           ============================================================ */
+        .cs-slide {
+            position: absolute;
+            inset: 0;
+            background-color: #faf9f6;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        .cs-slide.active {
+            opacity: 1;
+        }
+        .cs-slide-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #faf9f6;
+            border: 1px solid #000000;
+            border-radius: 9999px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+        #csSlideshow:hover .cs-slide-arrow {
+            opacity: 1;
+        }
+        .cs-slide-arrow:hover {
+            background: #000000;
+            color: #faf9f6;
+        }
+        .cs-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 9999px;
+            background: #cfc4c5;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .cs-dot.active {
+            background: #000000;
+        }
+    </style>
+    <link rel="icon" type="image/png" href="/logo/MT.png "/>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+<!-- ============================================================
+     MT MARK — coded once as an SVG symbol, reused everywhere
+     (nav, hero, footer, intro) via <use>. No raster logo image.
+     ============================================================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mt-mark" viewBox="0 0 1216 1102">
+      <path d="M0 6767 l0 -4237 505 0 505 0 0 2942 0 2943 1603 -1603 1602 -1602 960 960 960 960 2982 0 2983 0 0 545 0 545 -3222 0 -3223 0 -717 -717 -718 -718 -2110 2110 -2110 2110 0 -4238z M8430 4373 l0 -1798 -730 730 -730 730 0 955 0 955 -872 -873 -873 -872 2093 -2092 2092 -2093 0 3078 0 3077 -490 0 -490 0 0 -1797z" transform="translate(0,1102) scale(0.1,-0.1)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============================================================
+     INTRO — logo reveal built entirely in code (SVG line-draw +
+     type), plays once per browser session, then hands off to the
+     real page. No video, no raster asset.
+     ============================================================ -->
+<div class="intro-veil" id="introVeil">
+  <div class="intro-stage">
+    <svg class="intro-mark" id="introMark" viewBox="0 0 1216 1102" fill="none">
+      <path id="introMarkPath" d="M0 6767 l0 -4237 505 0 505 0 0 2942 0 2943 1603 -1603 1602 -1602 960 960 960 960 2982 0 2983 0 0 545 0 545 -3222 0 -3223 0 -717 -717 -718 -718 -2110 2110 -2110 2110 0 -4238z M8430 4373 l0 -1798 -730 730 -730 730 0 955 0 955 -872 -873 -873 -872 2093 -2092 2092 -2093 0 3078 0 3077 -490 0 -490 0 0 -1797z" transform="translate(0,1102) scale(0.1,-0.1)" stroke="#000000" stroke-width="16" fill="#000000" fill-opacity="0"/>
+    </svg>
+    <div class="intro-word">MOHAMAD&nbsp;TAREK</div>
+    <div class="intro-rule"></div>
+    <div class="intro-sub">Designer&nbsp;&nbsp;|&nbsp;&nbsp;Branding&nbsp;&nbsp;|&nbsp;&nbsp;Visual&nbsp;Identity&nbsp;&nbsp;|&nbsp;&nbsp;Marketing</div>
+  </div>
+</div>
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-transparent text-primary dark:text-on-primary-fixed border-b border-secondary-fixed dark:border-on-secondary-fixed-variant transition-colors duration-500 slow-eased transitions mimicking heavy-stock paper flex justify-between items-center px-margin-desktop py-6 w-full md:px-margin-mobile px-margin-mobile" id="main-nav">
+<div class="flex items-center gap-4">
+<svg class="w-6 h-6 text-primary dark:text-on-primary-fixed" aria-hidden="true"><use href="#mt-mark"></use></svg>
+<span class="material-symbols-outlined text-secondary dark:text-secondary-fixed-dim" data-icon="language">language</span>
+<span class="font-headline-sm text-headline-sm tracking-tighter text-primary dark:text-on-primary-fixed">Mohamad Tarek</span>
+</div>
+<a class="font-label-caps text-label-caps hover:text-primary dark:hover:text-on-primary-fixed transition-colors duration-500 hidden md:block" href="#portfolio">View Portfolio</a>
+</header>
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col items-center justify-center pt-24 px-margin-mobile relative">
+<div class="max-w-3xl text-center fade-in-section is-visible">
+<svg class="w-32 md:w-48 h-auto mx-auto mb-8 text-primary" aria-label="Mohamad Tarek"><use href="#mt-mark"></use></svg>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg mb-6 leading-tight">Crafting Brands That Speak</h1>
+<p class="font-body-lg text-body-lg text-on-secondary-container mb-12 max-w-xl mx-auto">
+                تصميم علامات تجارية تتحدث <br/> A disciplined approach to editorial minimalism and premium identity design.
+            </p>
+<a class="btn-primary font-label-caps text-label-caps px-8 py-4 inline-block uppercase tracking-widest text-primary" href="#portfolio">View Portfolio</a>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap px-margin-mobile border-t border-[#E2E2DF]" id="about">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter fade-in-section">
+<div class="md:col-span-4 md:col-start-2 mb-8 md:mb-0">
+<h2 class="font-headline-md text-headline-md mb-4">The Philosophy</h2>
+<p class="font-label-caps text-label-caps text-on-secondary-container uppercase tracking-widest">About the Studio / نبذة عن الاستوديو</p>
+</div>
+<div class="md:col-span-6">
+<p class="font-body-lg text-body-lg mb-6">
+                        I specialize in creating visual identities that are quiet, intentional, and enduring. Drawing inspiration from high-end editorial design, architecture, and contemporary art, my work relies on extreme whitespace and hairline precision to deliver a premium aesthetic.
+                    </p>
+<p class="font-body-md text-body-md text-on-secondary-container">
+                        Whether working in English or Arabic, every project is meticulously balanced to respect the inherent typographic elegance of the content.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap px-margin-mobile border-t border-[#E2E2DF]" id="services">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter fade-in-section">
+<div class="md:col-span-10 md:col-start-2 grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-16">
+<div class="service-item flex flex-col items-start border-l border-[#E2E2DF] pl-6 md:pl-8">
+<span class="material-symbols-outlined text-4xl mb-4 text-[#5B7C8D]" data-icon="draw" style="font-variation-settings: 'wght' 300;">draw</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">Branding</h3>
+<p class="font-body-md text-body-md text-on-secondary-container">Strategic brand positioning and narrative development.</p>
+</div>
+<div class="service-item flex flex-col items-start border-l border-[#E2E2DF] pl-6 md:pl-8">
+<span class="material-symbols-outlined text-4xl mb-4 text-[#5B7C8D]" data-icon="palette" style="font-variation-settings: 'wght' 300;">palette</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">Visual Identity</h3>
+<p class="font-body-md text-body-md text-on-secondary-container">Comprehensive visual systems and logo marks.</p>
+</div>
+<div class="service-item flex flex-col items-start border-l border-[#E2E2DF] pl-6 md:pl-8">
+<span class="material-symbols-outlined text-4xl mb-4 text-[#5B7C8D]" data-icon="campaign" style="font-variation-settings: 'wght' 300;">campaign</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">Marketing</h3>
+<p class="font-body-md text-body-md text-on-secondary-container">High-end collateral and campaign aesthetics.</p>
+</div>
+<div class="service-item flex flex-col items-start border-l border-[#E2E2DF] pl-6 md:pl-8">
+<span class="material-symbols-outlined text-4xl mb-4 text-[#5B7C8D]" data-icon="design_services" style="font-variation-settings: 'wght' 300;">design_services</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">Graphic Design</h3>
+<p class="font-body-md text-body-md text-on-secondary-container">Editorial layout, typography, and precise composition.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section class="py-section-gap px-margin-mobile border-t border-[#E2E2DF]" id="portfolio">
+<div class="max-w-container-max mx-auto fade-in-section">
+<h2 class="font-headline-md text-headline-md mb-12 md:ml-gutter">Selected Works</h2>
+<div class="grid grid-cols-1 gap-32">
+<!-- Project 1 ZYNEX -->
+<div class="portfolio-card group grid grid-cols-1 md:grid-cols-12 gap-gutter items-center cursor-pointer" data-project="zynex">
+<div class="md:col-span-8">
+<div class="aspect-square bg-surface w-full relative overflow-hidden">
+    <img
+        src="logo/ZYNEX.jpg"
+        alt="ZYNEX"
+        class="absolute inset-0 w-full h-full object-contain"
+    />
+</div>
+</div>
+<div class="md:col-span-4 mt-6 md:mt-0 p-4">
+<p class="font-label-caps text-label-caps text-on-secondary-container mb-2 uppercase tracking-widest">2026 / Editorial</p>
+<h3 class="font-headline-sm text-headline-sm mb-4">ZYNEX</h3>
+<a class="view-study-link text-primary font-label-caps text-label-caps inline-flex items-center gap-2 group-hover:underline cursor-pointer" data-project="zynex">
+View Study <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project 2 MILAD-->
+<div class="portfolio-card group grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-4 md:col-start-1 mt-6 md:mt-0 p-4 order-2 md:order-1 text-left md:text-right">
+<p class="font-label-caps text-label-caps text-on-secondary-container mb-2 uppercase tracking-widest">2024 / Branding</p>
+<h3 class="font-headline-sm text-headline-sm mb-4">MILAD SPORT SCIENTIST</h3>
+<a class="view-study-link text-primary font-label-caps text-label-caps inline-flex items-center gap-2 group-hover:underline cursor-pointer" data-project="MILAD">
+<span class="material-symbols-outlined text-sm hidden md:inline" data-icon="arrow_back">arrow_back</span>
+View Study <span class="material-symbols-outlined text-sm md:hidden" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="md:col-span-8 md:col-start-5 order-1 md:order-2">
+<div class="aspect-[4/3] bg-surface w-full relative overflow-hidden cursor-pointer" data-project="MILAD">
+    <img
+        src="logo/MILAD.PNG"
+        alt="MILAD"
+        class="absolute inset-0 w-full h-full object-contain"
+    />
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap px-margin-mobile border-t border-[#E2E2DF]" id="portfolio-2">
+<div class="max-w-container-max mx-auto fade-in-section">
+<div class="grid grid-cols-1 gap-32">
+<!-- Project 3 PLIX-->
+<div class="portfolio-card group grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-8">
+<div class="aspect-[4/3] bg-surface w-full relative overflow-hidden">
+    <img
+        src="logo/PLIX.PNG"
+        alt="PLIX"
+        class="absolute inset-0 w-full h-full object-contain"
+    />
+</div>
+</div>
+<div class="md:col-span-4 mt-6 md:mt-0 p-4">
+<p class="font-label-caps text-label-caps text-on-secondary-container mb-2 uppercase tracking-widest">2023 / Editorial</p>
+<h3 class="font-headline-sm text-headline-sm mb-4">PLIX PRINT</h3>
+<a class="view-study-link text-primary font-label-caps text-label-caps inline-flex items-center gap-2 group-hover:underline cursor-pointer" data-project="plix">View Study 
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================
+     CASE STUDY OVERLAY
+     Full-screen editorial detail view. Opens when a "View Study"
+     link is clicked. Content is populated from the PROJECTS object
+     in the script below — edit that object to swap in your own
+     projects, no HTML editing needed.
+     ============================================================ -->
+<div class="case-study-overlay" id="caseStudyOverlay" aria-hidden="true">
+<button class="case-study-close" id="caseStudyClose" aria-label="Close case study">
+    <span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<div class="case-study-inner">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    <p class="font-label-caps text-label-caps text-on-secondary-container uppercase tracking-widest mb-4" id="csCategory"></p>
+    <h2 class="font-headline-md text-headline-md mb-10 md:mb-16 max-w-3xl" id="csTitle"></h2>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-16 md:mb-24">
+    <div class="md:col-span-3 md:col-start-2">
+        <p class="font-label-caps text-label-caps text-on-secondary-container uppercase tracking-widest mb-2">Client</p>
+        <p class="font-body-md text-body-md" id="csClient"></p>
+        </div>
+        <div class="md:col-span-3">
+          <p class="font-label-caps text-label-caps text-on-secondary-container uppercase tracking-widest mb-2">Role</p>
+          <p class="font-body-md text-body-md" id="csRole"></p>
+        </div>
+        <div class="md:col-span-3">
+          <p class="font-label-caps text-label-caps text-on-secondary-container uppercase tracking-widest mb-2">Year</p>
+          <p class="font-body-md text-body-md" id="csYear"></p>
+        </div>
+      </div>
+
+      <div class="max-w-3xl md:ml-gutter mb-20 md:mb-32">
+        <p class="font-body-lg text-body-lg text-on-surface-variant" id="csDescription" style="transition: opacity 0.25s ease;"></p>
+      </div>
+
+      <div class="aspect-[16/10] w-full bg-surface relative mb-8 overflow-hidden" id="csSlideshow">
+        <div id="csSlides"></div>
+        <button class="cs-slide-arrow" id="csSlidePrev" aria-label="Previous image" style="left:16px;">
+          <span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+        </button>
+        <button class="cs-slide-arrow" id="csSlideNext" aria-label="Next image" style="right:16px;">
+          <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+        </button>
+      </div>
+      <div class="flex items-center justify-center gap-2 mb-20 md:mb-32" id="csSlideDots"></div>
+
+      <div class="border-t border-[#E2E2DF] pt-12 pb-24 flex items-center justify-between">
+        <button class="case-study-back font-label-caps text-label-caps inline-flex items-center gap-2 hover:underline" id="caseStudyBack">
+          <span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+          Back to Selected Works
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w-full py-section-gap grid grid-cols-12 gap-gutter px-margin-desktop max-w-container-max mx-auto border-t border-secondary-fixed dark:border-on-secondary-fixed-variant bg-surface dark:bg-on-tertiary-container text-primary dark:text-on-primary-fixed font-body-md text-body-md flat no shadows Subtle fade-in on scroll px-margin-mobile">
+<div class="col-span-12 md:col-span-4 mb-8 md:mb-0">
+<svg class="w-16 md:w-20 h-auto mb-4 text-primary dark:text-on-primary-fixed" aria-label="Mohamad Tarek"><use href="#mt-mark"></use></svg>
+<p class="text-secondary mb-8">© 2024 Mohamad Tarek. All Rights Reserved.</p>
+</div>
+<div class="col-span-12 md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+<a class="text-secondary hover:text-primary transition-all duration-300" href="#">Branding</a>
+<a class="text-secondary hover:text-primary transition-all duration-300" href="#">Visual Identity</a>
+<a class="text-secondary hover:text-primary transition-all duration-300" href="#">Marketing</a>
+<a class="text-secondary hover:text-primary transition-all duration-300" href="#">Graphic Design</a>
+</div>
+</footer>
+<script>
+        // Simple scroll spy for nav background
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+                nav.classList.remove('bg-transparent');
+            } else {
+                nav.classList.remove('nav-scrolled');
+                nav.classList.add('bg-transparent');
+            }
+        });
+
+        // Intersection Observer for fade-in elements
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-section').forEach((section) => {
+                observer.observe(section);
+            });
+        });
+
+        // ============================================================
+        // CASE STUDY DATA
+        // This is the ONLY place you need to edit to add, remove, or
+        // change a project. Each key ("lumina", "plix", ...) matches
+        // the data-project="..." attribute on a "View Study" link in
+        // the Portfolio section above.
+        //
+        // To add a new project:
+        //   1. Add a new "View Study" link in the Portfolio section
+        //      with a new data-project="your-id".
+        //   2. Add a matching entry here with that same id as the key.
+        //   3. gallery: [] can hold as many extra image URLs as you
+        //      want (or leave it empty for none).
+        // ============================================================
+        const PROJECTS = {
+            MILAD: {
+                category: '2023 / Editorial',
+                title: 'MILAD Monograph',
+                client: 'MILAD sports',
+                role: 'Art Direction, Editorial Design',
+                year: '2023',
+                slides: [
+                    { image: 'logo/Befor.png', caption: 'A limited-edition architectural monograph designed to feel like an artifact rather than a catalogue.' },
+                    { image: 'logo/MILAD.PNG', caption: 'Every spread is treated as its own composition, with extreme whitespace giving the concrete photography room to breathe.' },
+                    { image: 'logo/ميلاد.PNG', caption: 'The typographic system pairs a literary display serif with a utilitarian sans, echoing the tension between the building\'s brutalist mass and its quiet interior light.' }
+                ]
+            },
+            plix: {
+                category: '2023 / Editorial',
+                title: 'PLIX Print',
+                client: 'PLIX',
+                role: 'Art Direction, Print Design',
+                year: '2023',
+                slides: [
+                    { image: 'logo/PLIX.PNG', caption: 'A print identity project focused on bold typography and tactile paper choices, built to stand out on the shelf.' },
+                    { image: 'logo/PLIX-2.PNG', caption: 'A clean, considered layout system carried consistently across every printed piece.' }
+                ]
+            },
+            zynex: {
+                category: '2024 / Branding',
+                title: 'ZYNEX',
+                client: 'ZYNEX',
+                role: 'Brand Identity, Print Design',
+                year: '2024',
+                slides: [
+                    { image: 'logo/ZYNEX.jpg', caption: 'A futuristic brand identity for an AI-driven technology company, built around a bold metallic monogram.' },
+                    { image: 'logo/ZYNEX profile.jpg', caption: 'A dark, circuit-inspired visual language reinforces the brand\'s intelligent, high-performance positioning.' },
+                    { image: 'logo/bus card.png', caption: 'The tri-fold brochure system carries the identity across every panel.' }
+                ]
+            }
+        };
+
+        (function () {
+            const overlay = document.getElementById('caseStudyOverlay');
+            const closeBtn = document.getElementById('caseStudyClose');
+            const backBtn = document.getElementById('caseStudyBack');
+            const links = document.querySelectorAll('.view-study-link');
+            const mainNav = document.getElementById('main-nav');
+
+            // ============================================================
+            // SLIDESHOW ENGINE — crossfades between a project's images,
+            // autoplays every 6.5s, pauses on hover, and supports manual
+            // navigation via arrows or dots.
+            // ============================================================
+            const slidesWrap = document.getElementById('csSlides');
+            const dotsWrap = document.getElementById('csSlideDots');
+            const prevBtn = document.getElementById('csSlidePrev');
+            const nextBtn = document.getElementById('csSlideNext');
+            const slideshowEl = document.getElementById('csSlideshow');
+            let slideEls = [];
+            let dotEls = [];
+            let slideCaptions = [];
+            let currentSlide = 0;
+            let slideTimer = null;
+            const SLIDE_INTERVAL = 6500;
+            const descriptionEl = document.getElementById('csDescription');
+
+            function buildSlideshow(slides) {
+                slidesWrap.innerHTML = '';
+                dotsWrap.innerHTML = '';
+                slideCaptions = slides.map(s => s.caption || '');
+
+                slideEls = slides.map((s, i) => {
+                    const el = document.createElement('div');
+                    el.className = 'cs-slide' + (i === 0 ? ' active' : '');
+                    el.style.backgroundImage = `url("${s.image}")`;
+                    slidesWrap.appendChild(el);
+                    return el;
+                });
+
+                const showControls = slides.length > 1;
+                prevBtn.style.display = showControls ? 'flex' : 'none';
+                nextBtn.style.display = showControls ? 'flex' : 'none';
+
+                dotEls = slides.map((_, i) => {
+                    const dot = document.createElement('button');
+                    dot.className = 'cs-dot' + (i === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', `Go to image ${i + 1}`);
+                    dot.addEventListener('click', () => { goToSlide(i); startAutoplay(); });
+                    dotsWrap.appendChild(dot);
+                    return dot;
+                });
+                dotsWrap.style.display = showControls ? 'flex' : 'none';
+
+                currentSlide = 0;
+                descriptionEl.textContent = slideCaptions[0] || '';
+                stopAutoplay();
+                if (showControls) startAutoplay();
+            }
+
+            function goToSlide(index) {
+                if (!slideEls.length) return;
+                slideEls[currentSlide].classList.remove('active');
+                dotEls[currentSlide].classList.remove('active');
+                currentSlide = (index + slideEls.length) % slideEls.length;
+                slideEls[currentSlide].classList.add('active');
+                dotEls[currentSlide].classList.add('active');
+                descriptionEl.style.opacity = '0';
+                setTimeout(() => {
+                    descriptionEl.textContent = slideCaptions[currentSlide] || '';
+                    descriptionEl.style.opacity = '1';
+                }, 250);
+            }
+
+            function startAutoplay() {
+                stopAutoplay();
+                slideTimer = setInterval(() => goToSlide(currentSlide + 1), SLIDE_INTERVAL);
+            }
+
+            function stopAutoplay() {
+                if (slideTimer) clearInterval(slideTimer);
+                slideTimer = null;
+            }
+
+            prevBtn.addEventListener('click', () => { goToSlide(currentSlide - 1); startAutoplay(); });
+            nextBtn.addEventListener('click', () => { goToSlide(currentSlide + 1); startAutoplay(); });
+            slideshowEl.addEventListener('mouseenter', stopAutoplay);
+            slideshowEl.addEventListener('mouseleave', () => { if (slideEls.length > 1) startAutoplay(); });
+
+            function openCaseStudy(id) {
+                const data = PROJECTS[id];
+                if (!data) return;
+                document.getElementById('csCategory').textContent = data.category;
+                document.getElementById('csTitle').textContent = data.title;
+                document.getElementById('csClient').textContent = data.client;
+                document.getElementById('csRole').textContent = data.role;
+                document.getElementById('csYear').textContent = data.year;
+
+                buildSlideshow(data.slides);
+
+                overlay.scrollTop = 0;
+                overlay.classList.add('open');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.documentElement.classList.add('case-study-locked');
+                // FIX: fully hide the site nav while the overlay is open so
+                // "View Portfolio" can never collide with the close (X) button.
+                mainNav.classList.add('nav-hidden-for-overlay');
+            }
+
+            function closeCaseStudy() {
+                overlay.classList.remove('open');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.documentElement.classList.remove('case-study-locked');
+                mainNav.classList.remove('nav-hidden-for-overlay');
+                stopAutoplay();
+            }
+
+            links.forEach((link) => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openCaseStudy(link.getAttribute('data-project'));
+                });
+            });
+
+            closeBtn.addEventListener('click', closeCaseStudy);
+            backBtn.addEventListener('click', closeCaseStudy);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeCaseStudy();
+            });
+        })();
+
+        // --- INTRO: coded logo reveal ------------------------------
+        // Draws the MT mark as a vector stroke (real path length via
+        // getTotalLength — no image, no video), then fills it solid,
+        // then brings in the wordmark and subtext. Plays once per
+        // browser session; skips instantly on repeat visits.
+        (function () {
+            const veil = document.getElementById('introVeil');
+            const path = document.getElementById('introMarkPath');
+            const word = document.querySelector('.intro-word');
+            const rule = document.querySelector('.intro-rule');
+            const sub  = document.querySelector('.intro-sub');
+
+            if (sessionStorage.getItem('mtIntroPlayed')) {
+                veil.style.display = 'none';
+                return;
+            }
+
+            const len = path.getTotalLength();
+            path.style.strokeDasharray = len;
+            path.style.strokeDashoffset = len;
+            path.style.transition = 'none';
+            // force layout, then animate
+            path.getBoundingClientRect();
+            path.style.transition = 'stroke-dashoffset 1.3s cubic-bezier(.19,1,.22,1) 0.2s, fill-opacity 0.6s ease 1.3s';
+            requestAnimationFrame(() => {
+                path.style.strokeDashoffset = '0';
+                path.style.fillOpacity = '1';
+            });
+
+            setTimeout(() => word.classList.add('settle'), 1500);
+            setTimeout(() => rule.classList.add('draw'), 2500);
+            setTimeout(() => sub.classList.add('fade'), 2900);
+            setTimeout(() => {
+                veil.classList.add('leaving');
+                sessionStorage.setItem('mtIntroPlayed', '1');
+            }, 3800);
+        })();
+    </script>
+</body></html>
