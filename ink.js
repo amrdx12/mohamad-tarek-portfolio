@@ -28,8 +28,12 @@ function startInk(canvas, hero, content, options) {
   uniform vec2 px; uniform float dt; uniform float aspect;
   `;
   const SRC = {
-    advect: `uniform sampler2D vel, src; uniform float fade;
-      void main(){ vec2 c = uv - dt * texture(vel, uv).xy / vec2(aspect, 1.); o = texture(src, c) / (1. + fade * dt); }`,
+    advect: `uniform sampler2D vel, src; uniform float fade, soften;
+      void main(){ vec2 c = uv - dt * texture(vel, uv).xy / vec2(aspect, 1.); vec4 v = texture(src, c);
+        // A trace of diffusion, so colliding currents never leave a hard edge
+        if (soften > 0.) v = mix(v, .25 * (texture(src, c + vec2(px.x, 0.)) + texture(src, c - vec2(px.x, 0.))
+          + texture(src, c + vec2(0., px.y)) + texture(src, c - vec2(0., px.y))), min(.5, soften * dt));
+        o = v / (1. + fade * dt); }`,
     // A capsule-shaped brush, so fast pointer moves leave a stroke and not dots
     splat: `uniform sampler2D src; uniform vec2 a, b; uniform float r; uniform vec3 val;
       void main(){ vec2 s = vec2(aspect, 1.), p = uv * s, A = a * s, d = b * s - A;
@@ -73,12 +77,14 @@ function startInk(canvas, hero, content, options) {
         d += .3 * sqrt(gx * gx + gy * gy) * smoothstep(0., .25, d);
         // Quiet zone behind the text: rounded box measured from the page
         vec2 q = abs((uv - box.xy) * s) - box.zw * s; float sd = length(max(q, 0.)) + min(max(q.x, q.y), 0.);
-        float zone = mix(behind, 1., smoothstep(-.05, aspect > 1. ? .27 : .1, sd));
-        float ends = smoothstep(0., aspect > 1. ? .2 : .13, uv.y) * mix(.12, 1., smoothstep(topPx, topPx + .14, 1. - uv.y));
+        float away = smoothstep(.01, aspect > 1. ? .27 : .13, sd), zone = mix(behind, 1., away);
+        float ends = smoothstep(0., aspect > 1. ? .2 : .07, uv.y) * mix(.08, 1., smoothstep(topPx, topPx + .14, 1. - uv.y));
         vec2 f = gl_FragCoord.xy;
         float grain = 1. + .22 * (n(f * .55) - .5) + .16 * (n(f * .11) - .5);
         d = max(d, 0.) * strength * zone * ends * grain;
         d = d / (1. + d * .3);
+        // However much ink gathers, it stays a faint tint behind text so the words keep their contrast
+        float cap = mix(.05, 12., away * away); d = cap * (1. - exp(-d / cap));
         vec3 paper = vec3(250., 249., 246.) / 255.;
         o = vec4(paper * exp(-(d.x * vec3(1.62, 1.6, 1.56) + d.y * vec3(1.25, .84, .66))), 1.);
         o.rgb += (h(f) - .5) / 255. * step(.002, d.x + d.y);
@@ -139,7 +145,7 @@ function startInk(canvas, hero, content, options) {
     const H = hero.getBoundingClientRect(), C = content.getBoundingClientRect();
     if (!H.width || !C.width) return;
     box = [(C.left + C.width / 2 - H.left) / H.width, 1 - (C.top + C.height / 2 - H.top) / H.height,
-      Math.max(0.02, C.width / 2 / H.width - 0.02), Math.max(0.02, C.height / 2 / H.height - 0.03)];
+      C.width / 2 / H.width, C.height / 2 / H.height];
     topPx = 84 / H.height;
   }
   function resize() {
@@ -172,10 +178,14 @@ function startInk(canvas, hero, content, options) {
 
   // Poured in around the rim, along the diagonals of the mark
   const WIDE = [[0.1, 0.8, 1, -1], [0.89, 0.72, -1, -1], [0.17, 0.5, -1, -1], [0.82, 0.84, 1, -1], [0.05, 0.62, 1, -1], [0.95, 0.5, -1, -1], [0.22, 0.84, -1, -1]];
-  const TALL = [[0.14, 0.87, 1, -1], [0.82, 0.25, -1, -1], [0.86, 0.88, -1, -1], [0.2, 0.22, 1, -1], [0.5, 0.2, 1, -1]];
+  // On phones: the free bands above and below the text, wherever the text ends up
+  function tall() {
+    const low = Math.max(0.05, (box[1] - box[3]) * 0.55), high = 1 - (topPx + Math.max(0.03, (1 - box[1] - box[3] - topPx) * 0.45));
+    return [[0.14, high, 1, -1], [0.8, low, -1, 0.3], [0.86, high, -1, -1], [0.2, low, 1, 0.3], [0.5, low, 1, 0.2]];
+  }
   const rnd = (a, b) => a + Math.random() * (b - a);
   function newDrop() {
-    const wide = aspect > 1, set = wide ? WIDE : TALL, s = set[count % set.length], bloom = count % 2 === 0;
+    const wide = aspect > 1, set = wide ? WIDE : tall(), s = set[count % set.length], bloom = count % 2 === 0;
     const blue = count % INK.blueEvery === INK.blueEvery - 1, parts = bloom ? 8 : 3;
     for (let i = 0; i < parts; i++) {
       const spread = bloom ? 0.085 : 0.03;
@@ -213,14 +223,14 @@ function startInk(canvas, hero, content, options) {
     use('curl', crl, { px: tx, vel: vel.a });
     use('forces', vel.b, { px: tx, dt, time, swirl: 4.5, vel: vel.a, curlT: crl, dye: dye.a }); vel.swap();
     use('div', dvg, { px: tx, vel: vel.a });
-    for (let i = 0; i < 14; i++) { use('pressure', prs.b, { px: tx, p: prs.a, d: dvg }); prs.swap(); }
+    for (let i = 0; i < 24; i++) { use('pressure', prs.b, { px: tx, p: prs.a, d: dvg }); prs.swap(); }
     use('project', vel.b, { px: tx, vel: vel.a, p: prs.a }); vel.swap();
-    use('advect', vel.b, { dt, fade: 0.42, vel: vel.a, src: vel.a }); vel.swap();
-    use('advect', dye.b, { dt, fade: INK.fade, vel: vel.a, src: dye.a }); dye.swap();
+    use('advect', vel.b, { dt, fade: 0.42, soften: 0, vel: vel.a, src: vel.a }); vel.swap();
+    use('advect', dye.b, { px: texel(dye.a), dt, fade: INK.fade, soften: 9, vel: vel.a, src: dye.a }); dye.swap();
   }
   function draw() {
     if (!dye) return;
-    use('show', null, { px: texel(dye.a), dye: dye.a, box, res: [canvas.width, canvas.height], strength: INK.strength, behind: INK.behindText * (aspect > 1 ? 1 : 1.5), topPx, view: VIEW });
+    use('show', null, { px: texel(dye.a), dye: dye.a, box, res: [canvas.width, canvas.height], strength: INK.strength, behind: INK.behindText, topPx, view: VIEW });
   }
 
   // ---------- Pointer + scroll ----------
